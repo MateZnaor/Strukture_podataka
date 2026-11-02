@@ -137,14 +137,14 @@ int main(void)
     if (readFromFile(&headFirst, "p1.txt") != 0) {
         printf("Greska pri citanju prve datoteke.\n");
         deleteAll(&headFirst);
-        return EXIT_FAILURE;
+        return -1;
     }
 
     if (readFromFile(&headSecond, "p2.txt") != 0) {
         printf("Greska pri citanju druge datoteke.\n");
         deleteAll(&headFirst);
         deleteAll(&headSecond);
-        return EXIT_FAILURE;
+        return -1;
     }
 
     printf("\nP(x) = ");
@@ -166,5 +166,5 @@ int main(void)
     deleteAll(&headSecond);
     deleteAll(&headSum);
     deleteAll(&headProd);
-    return EXIT_SUCCESS;
+    return 0;
 }
